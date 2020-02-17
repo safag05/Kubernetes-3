@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dockerhub
+spec:       
+  containers:
+    - name: dockherhub
+      image: safag/apache2
+  imagePullSecrets:
+    - name: safag

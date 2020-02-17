@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: dockerhub
+  labels:
+   app: ubuntu
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ubuntu-pod
+  template:
+    metadata:
+      labels:
+        app: ubuntu-pod
+    spec:
+      imagePullSecrets:
+       - name: safag
+      containers:
+      - name: dockerhub
+        image: safag/apache2   
