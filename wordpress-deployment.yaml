@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: wordpress-deployment
+  name: wordpress-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: wordpress-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: wordpress-deployment
+    spec:
+      containers:
+      - image: wordpress
+        name: wordpress-deployment
+        resources: {}
+status: {}
